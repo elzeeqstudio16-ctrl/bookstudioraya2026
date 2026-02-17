@@ -7,9 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{ --gold:#C8A951; --dark:#111111; --soft:#f5f3ee; --white:#ffffff; }
+:root{ --gold:#C8A951; --dark:#111111; --soft:#f5f3ee; --white:#ffffff; --red:#d9534f; }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{ font-family:'Poppins',sans-serif; background:var(--soft); color:var(--dark); overflow-x:hidden; }
+body{ font-family:'Poppins',sans-serif; background:var(--soft); color:var(--dark); }
 
 header{
 height:100vh;
@@ -21,23 +21,17 @@ display:flex; align-items:center; justify-content:center; text-align:center; col
 h1{ font-family:'Playfair Display',serif; font-size:clamp(36px, 8vw, 56px); margin-bottom:10px; }
 .ssm { font-size: 12px; letter-spacing: 1px; opacity: 0.8; margin-bottom: 20px; display: block; }
 
-.btn{ padding:14px 36px; border-radius:50px; background:var(--gold); color:white; text-decoration:none; font-weight:500; display:inline-block; border:none; cursor:pointer; transition: 0.3s; }
-.btn:hover{ background:#a8872f; transform:translateY(-3px); }
-
 section{ padding:60px 20px; max-width:1200px; margin:auto; }
-.section-title{ font-family:'Playfair Display',serif; font-size:32px; text-align:center; margin-bottom:15px; }
+.section-title{ font-family:'Playfair Display',serif; font-size:32px; text-align:center; margin-bottom:30px; }
 
-/* GALERI GAMBAR BARU */
-.gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-bottom:50px; }
-.gallery img{ width:100%; height:400px; object-fit:cover; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transition: 0.3s; }
-.gallery img:hover{ transform: scale(1.02); }
-
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
-.info-card { background: var(--white); padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.info-card h3 { color: var(--gold); margin-bottom: 15px; font-family: 'Playfair Display', serif; }
-.info-card ul { list-style: none; }
-.info-card ul li { margin-bottom: 8px; font-size: 14px; display: flex; align-items: center; }
-.info-card ul li::before { content: "✓"; color: var(--gold); font-weight: bold; margin-right: 10px; }
+/* PREMIUM PACKAGE CARDS */
+.package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 50px; }
+.package-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; border: 1px solid #eee; }
+.package-card:hover { transform: translateY(-10px); }
+.package-card img { width: 100%; height: 250px; object-fit: cover; }
+.package-info { padding: 20px; }
+.package-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; color: var(--gold); }
+.package-price { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
 
 .booking-container{ background:var(--white); padding:30px; border-radius:25px; box-shadow:0 20px 50px rgba(0,0,0,0.08); }
 .form-group{ margin-bottom:15px; }
@@ -47,11 +41,10 @@ input, select{ width:100%; padding:12px; border-radius:10px; border:1px solid #d
 #slotList{ display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:10px; margin-top:10px; }
 .slot{ padding:10px; border-radius:8px; border:1px solid #ddd; background:white; cursor:pointer; text-align:center; font-size:11px; }
 .slot.selected{ background:var(--gold) !important; color:white; border-color:var(--gold); }
-.full{ background:#eee; color:#999; cursor:not-allowed; }
+.slot.full { background:#eee !important; color:#999 !important; cursor:not-allowed !important; border-color: #ddd !important; }
 
 .notice { background: #fff9e6; padding: 20px; border-radius: 15px; border-left: 5px solid var(--gold); margin-bottom: 25px; font-size: 14px; }
 footer{ background:#0f0f0f; color:#aaa; text-align:center; padding:60px 20px; margin-top: 50px; }
-.footer-addr { color: #fff; margin-bottom: 10px; font-style: normal; display: block; }
 </style>
 </head>
 <body>
@@ -60,47 +53,47 @@ footer{ background:#0f0f0f; color:#aaa; text-align:center; padding:60px 20px; ma
 <div class="hero">
 <span class="ssm">NO SSM: RA0045721-V</span>
 <h1>Studio Raya 2026</h1>
-<p>Abadikan kenangan Syawal anda dengan suasana minimalis beige aesthetic yang eksklusif.</p>
-<a href="#booking" class="btn">Tempah Slot Sekarang</a>
+<p>Abadikan kenangan Syawal anda dengan suasana minimalis beige aesthetic.</p>
+<a href="#pakej" class="btn" style="padding:14px 36px; border-radius:50px; background:var(--gold); color:white; text-decoration:none; display:inline-block; margin-top: 20px;">Lihat Pakej Premium</a>
 </div>
 </header>
 
-<section id="gallery">
-<h2 class="section-title">Galeri Elzeeq Studio</h2>
-<div class="gallery">
-<img src="raya1.jpg" alt="Foto Raya 1"> 
-<img src="raya2.jpg" alt="Foto Raya 2"> 
-<img src="raya3.jpg" alt="Foto Raya 3"> 
-<img src="raya4.jpg" alt="Foto Raya 4"> 
-<img src="raya5.jpg" alt="Foto Raya 5">
-</div>
-
-<div class="info-grid">
-<div class="info-card">
-<h3>Lokasi Studio</h3>
-<p style="font-size: 14px; line-height: 1.8;">
-<strong>B3 BANGUNAN ARKED MARA SIMPANG EMPAT</strong><br>
-02700 SIMPANG EMPAT, PERLIS.
-</p>
-</div>
-<div class="info-card">
-<h3>Kemudahan Studio</h3>
-<ul>
-<li>Studio Tingkat Bawah (Ground Floor)</li>
-<li>Parking Yang Selesa</li>
-<li>Ada Surau & Tandas (L & P)</li>
-<li>Studio Berhawa Sejuk (Full A/C)</li>
-<li>Mesra Warga Emas & OKU</li>
-</ul>
-</div>
+<section id="pakej">
+<h2 class="section-title">Pilihan Pakej Eksklusif</h2>
+<div class="package-grid">
+    <div class="package-card">
+        <img src="raya2.jpg" alt="Promo Ramadhan">
+        <div class="package-info">
+            <h3>Promo Ramadhan</h3>
+            <p class="package-price">RM100</p>
+            <p style="font-size: 13px; color: #666;">Terhad untuk 20 pelanggan pertama sahaja!</p>
+        </div>
+    </div>
+    <div class="package-card">
+        <img src="raya4.jpg" alt="Pakej Normal">
+        <div class="package-info">
+            <h3>Pakej Normal</h3>
+            <p class="package-price">RM120</p>
+            <p style="font-size: 13px; color: #666;">Sesuai untuk sesi keluarga kecil & estetik.</p>
+        </div>
+    </div>
+    <div class="package-card">
+        <img src="raya5.jpg" alt="Raya Pertama">
+        <div class="package-info">
+            <h3>Raya Pertama</h3>
+            <p class="package-price">RM130</p>
+            <p style="font-size: 13px; color: #666;">Slot khas untuk pagi Syawal yang bermakna.</p>
+        </div>
+    </div>
 </div>
 </section>
 
 <section id="booking">
-<h2 class="section-title">Borang Tempahan</h2>
-
+<h2 class="section-title">Tempah Slot Sekarang</h2>
 <div class="notice">
-<strong>INFO SLOT:</strong> 1 Slot = 15 Minit | Had 6-7 orang dewasa | Anak < 8 tahun PERCUMA | Deposit RM50.
+<strong>JADUAL OPERASI:</strong><br>
+• Slot: 15 Minit | Masa: 11:00 AM - 12:00 AM<br>
+• Slot <strong>(FULL)</strong> tidak boleh dipilih. Sila pilih masa yang tersedia.
 </div>
 
 <div class="booking-container">
@@ -115,121 +108,107 @@ footer{ background:#0f0f0f; color:#aaa; text-align:center; padding:60px 20px; ma
 </div>
 
 <div class="form-group">
-<label>No. Telegram:</label>
-<input type="text" id="custTele" placeholder="CONTOH: @ali_raya">
-</div>
-
-<div class="form-group">
-<label>Tarikh Photoshoot:</label>
+<label>Tarikh Photoshoot (1 Ramadhan - 10 Syawal):</label>
 <input type="date" id="bookingDate">
 </div>
 
 <div class="form-group">
-<label>Pilih Masa (15 Minit):</label>
+<label>Pilih Masa (15 Minit/Slot):</label>
 <div id="slotList"></div>
 </div>
 
 <div class="form-group">
-<label>Pakej:</label>
+<label>Pilih Pakej Anda:</label>
 <select id="custPakej">
-<option value="PROMO RAMADHAN (RM100)">PROMO RAMADHAN - RM100</option>
+<option value="PROMO RAMADHAN (RM100)">🔥 PROMO RAMADHAN - RM100</option>
 <option value="NORMAL (RM120)">PAKEJ NORMAL - RM120</option>
 <option value="RAYA PERTAMA (RM130)">PAKEJ RAYA PERTAMA - RM130</option>
 </select>
 </div>
 
-<div class="form-group">
-<label>Add-on Frame:</label>
-<select id="custAddon">
-<option value="Tiada">Tiada</option>
-<option value="11R (RM70)">11R (RM70)</option>
-<option value="12RW (RM120)">12RW (RM120)</option>
-<option value="24R (RM180)">24R (RM180)</option>
-</select>
-</div>
-
-<button onclick="sendToWhatsApp()" class="btn" style="width:100%;">Hantar Tempahan ke WhatsApp</button>
+<button onclick="sendToWhatsApp()" style="width:100%; padding:15px; background:var(--gold); color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold; font-size: 16px;">HANTAR TEMPAHAN KE WHATSAPP</button>
 </div>
 </section>
 
 <footer>
-<address class="footer-addr">
-B3 BANGUNAN ARKED MARA SIMPANG EMPAT, 02700 PERLIS
-</address>
+<p>B3 BANGUNAN ARKED MARA SIMPANG EMPAT, 02700 PERLIS</p>
 <p>NO SSM: RA0045721-V | © 2026 Elzeeq Studio</p>
 </footer>
 
 <script>
+// --- CONFIG ADMIN (FULL SLOTS) ---
+const FULL_SLOTS = [
+    "2026-03-20_11:00 AM" 
+];
+// --------------------------------
+
 const container = document.getElementById('slotList');
 const dateInput = document.getElementById('bookingDate');
 let selectedTime = "";
 
-const RAMADHAN_START = new Date("2026-02-18");
-const SYAWAL_END = new Date("2026-04-08");
-dateInput.min = RAMADHAN_START.toISOString().split("T")[0];
-dateInput.max = SYAWAL_END.toISOString().split("T")[0];
+dateInput.min = "2026-02-18"; 
+dateInput.max = "2026-04-08"; 
 
 function generateSlots(date) {
-container.innerHTML = "";
-selectedTime = "";
-let start = 11 * 60; // 11:00 AM
-let end = 22 * 45;   // 10:45 PM
+    container.innerHTML = "";
+    selectedTime = "";
+    let start = 11 * 60; 
+    let end = 23 * 45;   
 
-while(start <= end) {
-let h = Math.floor(start / 60);
-let m = start % 60;
-let displayH = h > 12 ? h - 12 : h;
-let ampm = h >= 12 ? "PM" : "AM";
-let time = `${displayH}:${m == 0 ? "00" : m} ${ampm}`;
+    while(start < (24 * 60)) {
+        let h = Math.floor(start / 60);
+        let m = start % 60;
+        let displayH = h > 12 ? h - 12 : (h === 0 ? 12 : h);
+        let ampm = h >= 12 ? "PM" : "AM";
+        let time = `${displayH}:${m === 0 ? "00" : m} ${ampm}`;
+        
+        if(date === "2026-03-19" && start >= (18 * 60)) {
+            start += 15;
+            continue; 
+        }
 
-let key = date + "_" + time;
-let count = localStorage.getItem(key) || 0;
-
-let btn = document.createElement("div");
-btn.className = count >= 7 ? "slot full" : "slot"; // Terhad 7 orang
-btn.innerText = time;
-
-if(count < 7) {
-btn.onclick = function() {
-document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
-btn.classList.add('selected');
-selectedTime = time;
-};
-}
-container.appendChild(btn);
-start += 15; // Slot 15 minit
-}
+        let slotKey = `${date}_${time}`;
+        let btn = document.createElement("div");
+        
+        if(FULL_SLOTS.includes(slotKey)) {
+            btn.className = "slot full";
+            btn.innerText = time + " (FULL)";
+        } else {
+            btn.className = "slot";
+            btn.innerText = time;
+            btn.onclick = function() {
+                document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = time;
+            };
+        }
+        container.appendChild(btn);
+        start += 15;
+    }
 }
 
 dateInput.addEventListener("change", function() {
-if(this.value) generateSlots(this.value);
+    if(this.value) generateSlots(this.value);
 });
 
 function sendToWhatsApp() {
-const nama = document.getElementById('custName').value;
-const hp = document.getElementById('custHP').value;
-const tele = document.getElementById('custTele').value;
-const tarikh = document.getElementById('bookingDate').value;
-const pakej = document.getElementById('custPakej').value;
-const addon = document.getElementById('custAddon').value;
+    const nama = document.getElementById('custName').value;
+    const hp = document.getElementById('custHP').value;
+    const tarikh = document.getElementById('bookingDate').value;
+    const pakej = document.getElementById('custPakej').value;
 
-if(!nama || !hp || !tarikh || !selectedTime) {
-alert("Sila isi butiran dan pilih masa!");
-return;
-}
+    if(!nama || !hp || !tarikh || !selectedTime) {
+        alert("Sila lengkapkan butiran dan pilih masa!");
+        return;
+    }
 
-let msg = `Assalamualaikum Elzeeq Studio, saya ingin menempah slot raya:%0A%0A` +
-`*𝐍𝐀𝐌𝐀* : ${nama.toUpperCase()}%0A` +
-`*𝐇𝐏* : ${hp}%0A` +
-`*𝐍𝐎 𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌* : ${tele}%0A` +
-`*𝐓𝐀𝐑𝐈𝐊𝐇 𝐏𝐇𝐎𝐓𝐎𝐒𝐇𝐎𝐎𝐓* : ${tarikh}%0A` +
-`*𝐌𝐀𝐒𝐀 𝐏𝐇𝐎𝐓𝐎𝐒𝐇𝐎𝐎𝐓* : ${selectedTime}%0A` +
-`*𝐏𝐀𝐊𝐄𝐉* : ${pakej}%0A` +
-`*𝐃𝐄𝐏𝐎𝐒𝐈𝐓* : 𝐑𝐌𝟓𝟎.𝟎𝟎%0A` +
-`*𝐀𝐃𝐃 𝐎𝐍 𝐅𝐑𝐀𝐌𝐄 𝐉𝐈𝐊𝐀 𝐀𝐃𝐀* : ${addon}%0A%0A` +
-`_Info: Studio Tingkat Bawah, Parking Selesa, Mesra Warga Emas & OKU_`;
+    let msg = `Assalamualaikum Elzeeq Studio, saya ingin lock slot raya:%0A%0A` +
+              `*𝐍𝐀𝐌𝐀*: ${nama.toUpperCase()}%0A` +
+              `*𝐓𝐀𝐑𝐈𝐊𝐇*: ${tarikh}%0A` +
+              `*𝐌𝐀𝐒𝐀*: ${selectedTime}%0A` +
+              `*𝐏𝐀𝐊𝐄𝐉*: ${pakej}`;
 
-window.open(`https://wa.me/601160611731?text=${msg}`, "_blank");
+    window.open(`https://wa.me/601160611731?text=${msg}`, "_blank");
 }
 </script>
 </body>
