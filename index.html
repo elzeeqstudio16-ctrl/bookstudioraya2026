@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elzeeq Studio | Studio Raya 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --pastel-cream: #F9F7F2;
+            --studio-beige: #F2EFE9; /* Warna beige studio */
+            --studio-dark: #232323;  /* Warna dark premium */
             --soft-gold: #B89B72;
-            --text-dark: #4A4A4A;
+            --text-muted: #6F6F6F;
             --white: #FFFFFF;
             --promo-red: #D24D33;
         }
@@ -18,66 +20,68 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: var(--pastel-cream); 
-            color: var(--text-dark); 
+            background-color: var(--studio-beige); 
+            color: var(--studio-dark); 
             scroll-behavior: smooth; 
         }
 
         /* --- NAVIGATION --- */
-        nav { padding: 20px 50px; position: fixed; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(184, 155, 114, 0.1); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--soft-gold); }
-        .est { font-size: 10px; letter-spacing: 3px; color: var(--text-dark); opacity: 0.7; }
+        nav { padding: 20px 50px; position: fixed; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 2px; color: var(--studio-dark); font-weight: 700; }
+        .est { font-size: 10px; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; }
 
-        /* --- HERO SECTION (PHOTO 7) --- */
+        /* --- HERO SECTION --- */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('7.jpg') center/cover no-repeat; 
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('7.jpg') center/cover no-repeat; 
             display: flex; justify-content: center; align-items: center; text-align: center; color: var(--white); 
         }
-        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(35px, 8vw, 70px); font-weight: 400; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-content p { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-        .location-tag { font-size: 12px; letter-spacing: 2px; opacity: 0.9; border-top: 1px solid rgba(255,255,255,0.4); padding-top: 10px; display: inline-block; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(35px, 8vw, 75px); font-weight: 400; margin-bottom: 15px; letter-spacing: 5px; }
+        .hero-content p { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; opacity: 0.9; }
+        .location-tag { font-size: 11px; letter-spacing: 2px; border: 1px solid rgba(255,255,255,0.5); padding: 8px 20px; display: inline-block; text-transform: uppercase; }
 
-        /* --- SECTION SETTINGS --- */
-        .section { padding: 80px 30px; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 40px; font-weight: 400; font-size: 32px; letter-spacing: 1px; color: var(--soft-gold); }
+        .section { padding: 100px 30px; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 50px; font-weight: 400; font-size: 36px; letter-spacing: 2px; position: relative; }
+        .section-title::after { content: ""; width: 40px; height: 1px; background: var(--soft-gold); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
 
-        /* --- GALLERY GRID --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 50px; }
-        .gallery-grid img { width: 100%; height: 400px; object-fit: cover; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* --- PACKAGE CARDS --- */
+        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .package-card { background: var(--white); border-radius: 0; text-align: center; transition: 0.5s ease; border: 1px solid #F0F0F0; }
+        .package-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        .package-card img { width: 100%; height: 400px; object-fit: cover; }
+        .package-info { padding: 40px 20px; }
+        .package-info h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 10px; letter-spacing: 1px; }
+        .package-price { font-weight: 600; font-size: 22px; color: var(--soft-gold); margin-bottom: 10px; }
+        .promo-tag { color: var(--promo-red); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
 
-        /* --- PACKAGE CARDS (PHOTO 1, 2, 4) --- */
-        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .package-card { background: var(--white); border: 1px solid #EEE; text-align: center; transition: 0.4s; overflow: hidden; }
-        .package-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .package-card img { width: 100%; height: 350px; object-fit: cover; }
-        .package-info { padding: 30px; }
-        .package-info h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--soft-gold); margin-bottom: 10px; }
-        .package-price { font-weight: 600; font-size: 20px; color: var(--text-dark); margin-bottom: 15px; }
-
-        /* --- PROMO TEXT RED --- */
-        .promo-special { color: var(--promo-red); font-weight: 600; font-size: 13px; letter-spacing: 1px; margin-top: 10px; display: block; }
-
-        /* --- NOTA KEMUDAHAN & KELEBIHAN --- */
-        .benefits-section { background: #F4F1EA; padding: 50px 30px; border-radius: 0; margin-bottom: 50px; }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .benefit-item { display: flex; align-items: flex-start; gap: 15px; font-size: 13px; line-height: 1.6; }
-        .benefit-item span { color: var(--soft-gold); font-weight: bold; font-size: 18px; }
+        /* --- BENEFITS (POFO STYLE) --- */
+        .benefits-section { background: var(--white); padding: 80px 40px; margin-bottom: 80px; border: 1px solid #EEE; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .benefit-item { font-size: 13px; line-height: 1.8; color: var(--text-muted); }
+        .benefit-item h5 { color: var(--studio-dark); font-size: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .benefit-item span { color: var(--soft-gold); font-size: 18px; }
 
         /* --- BOOKING FORM --- */
-        .booking-card { background: var(--white); padding: 40px; border: 1px solid #F0F0F0; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .booking-card { background: var(--white); padding: 60px; border: 1px solid #F0F0F0; max-width: 800px; margin: 0 auto; }
         .form-group { margin-bottom: 25px; }
-        label { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; opacity: 0.8; }
-        input, select { width: 100%; padding: 15px; border: 1px solid #EEE; font-family: 'Montserrat', sans-serif; font-size: 13px; border-radius: 0; }
+        label { display: block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; color: var(--studio-dark); font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 18px; border: 1px solid #E5E5E5; font-family: 'Montserrat', sans-serif; font-size: 13px; border-radius: 0; background: #FAFAFA; transition: 0.3s; }
+        input:focus, select:focus, textarea:focus { border-color: var(--studio-dark); background: #FFF; }
         
-        .btn-submit { 
-            width: 100%; padding: 22px; background: var(--soft-gold); color: white; border: none; 
-            letter-spacing: 4px; font-size: 11px; text-transform: uppercase; cursor: pointer; transition: 0.4s;
-        }
-        .btn-submit:hover { background: var(--text-dark); }
+        .deposit-badge { background: var(--promo-red); color: white; padding: 12px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-align: center; margin-bottom: 30px; }
 
-        footer { padding: 60px; text-align: center; background: #FFF; border-top: 1px solid #F0F0F0; }
-        .footer-ssm { font-size: 11px; letter-spacing: 2px; color: var(--soft-gold); font-weight: 600; margin-bottom: 10px; }
+        .btn-submit { 
+            width: 100%; padding: 25px; background: var(--studio-dark); color: white; border: none; 
+            letter-spacing: 5px; font-size: 12px; text-transform: uppercase; cursor: pointer; transition: 0.5s;
+        }
+        .btn-submit:hover { background: var(--soft-gold); letter-spacing: 7px; }
+
+        /* --- FOOTER & SOCIALS --- */
+        footer { padding: 80px 20px; text-align: center; background: #FFF; border-top: 1px solid #F0F0F0; }
+        .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 25px; }
+        .social-links a { color: var(--studio-dark); font-size: 20px; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--soft-gold); transform: translateY(-3px); }
+        .footer-ssm { font-size: 12px; letter-spacing: 3px; color: var(--soft-gold); font-weight: 700; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -97,65 +101,80 @@
 
     <section class="section" id="gallery">
         <h2 class="section-title">Our Atelier Gallery</h2>
-        <div class="gallery-grid">
-            <img src="9.jpg" alt="Gallery">
-            <img src="10.jpg" alt="Gallery">
-            <img src="11.jpg" alt="Gallery">
-            <img src="12.jpg" alt="Gallery">
-            <img src="14.jpg" alt="Gallery">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <img src="9.jpg" style="width:100%; height:350px; object-fit:cover; border-radius: 0;">
+            <img src="10.jpg" style="width:100%; height:350px; object-fit:cover;">
+            <img src="11.jpg" style="width:100%; height:350px; object-fit:cover;">
+            <img src="12.jpg" style="width:100%; height:350px; object-fit:cover;">
+            <img src="14.jpg" style="width:100%; height:350px; object-fit:cover;">
         </div>
     </section>
 
-    <section class="section" id="pakej">
-        <h2 class="section-title">Pilihan Pakej Potret</h2>
+    <section class="section" id="booking">
+        <h2 class="section-title">Pilihan Pakej & Tempahan</h2>
         <div class="package-grid">
             <div class="package-card">
-                <img src="1.jpg" alt="Promo Ramadhan">
+                <img src="1.jpg" alt="Promo">
                 <div class="package-info">
                     <h3>Promo Ramadhan</h3>
                     <p class="package-price">RM100</p>
-                    <span class="promo-special">🔥 TERHAD 20 SLOT TERAWAL SAHAJA</span>
+                    <span class="promo-tag">🔥 TERHAD 20 SLOT TERAWAL</span>
                 </div>
             </div>
             <div class="package-card">
-                <img src="2.jpg" alt="Pakej Normal">
+                <img src="2.jpg" alt="Normal">
                 <div class="package-info">
                     <h3>Pakej Normal</h3>
                     <p class="package-price">RM120</p>
-                    <p style="font-size: 12px; opacity: 0.7;">Sesi potret keluarga yang santai & klass</p>
                 </div>
             </div>
             <div class="package-card">
-                <img src="4.jpg" alt="Raya Pertama">
+                <img src="4.jpg" alt="Raya">
                 <div class="package-info">
                     <h3>Raya Pertama</h3>
                     <p class="package-price">RM130</p>
-                    <p style="font-size: 12px; opacity: 0.7;">Slot khas untuk pagi Syawal yang indah</p>
                 </div>
             </div>
         </div>
 
         <div class="benefits-section">
-            <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 25px; font-size: 22px; text-align: center;">Kenapa Pilih Elzeeq Studio?</h4>
             <div class="benefits-grid">
-                <div class="benefit-item"><span>✓</span> Photographer mesra pelanggan & berpengalaman lebih 10 tahun.</div>
-                <div class="benefit-item"><span>✓</span> Studio di TINGKAT BAWAH (Ground Floor) - Sangat memudahkan.</div>
-                <div class="benefit-item"><span>✓</span> Mesra OKU dan Warga Emas.</div>
-                <div class="benefit-item"><span>✓</span> Kawasan parking yang sangat luas untuk pelanggan.</div>
-                <div class="benefit-item"><span>✓</span> Kemudahan tandas lelaki & perempuan disediakan.</div>
+                <div class="benefit-item">
+                    <h5><span>01.</span> PENGALAMAN</h5>
+                    Photographer mesra pelanggan & berpengalaman lebih 10 tahun dalam bidang potret.
+                </div>
+                <div class="benefit-item">
+                    <h5><span>02.</span> AKSES MUDAH</h5>
+                    Studio terletak di TINGKAT BAWAH (Ground Floor). Sangat memudahkan untuk warga emas & OKU.
+                </div>
+                <div class="benefit-item">
+                    <h5><span>03.</span> FASILITI</h5>
+                    Kawasan parking yang luas untuk keselesaan pelanggan serta kemudahan tandas disediakan.
+                </div>
             </div>
         </div>
 
         <div class="booking-card">
-            <h2 style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 30px;">Borang Tempahan Tarikh</h2>
+            <div class="deposit-badge">DEPOSIT : RM50 SAHAJA</div>
+            
             <div class="form-group">
                 <label>Nama Penuh</label>
-                <input type="text" id="custName" placeholder="CONTOH: MUHAMMAD ALI">
+                <input type="text" id="custName" placeholder="NAMA PENUH ANDA">
+            </div>
+
+            <div class="form-group">
+                <label>No. Telefon (WhatsApp)</label>
+                <input type="tel" id="custPhone" placeholder="01X-XXXXXXX">
             </div>
             
             <div class="form-group">
                 <label>Tarikh Pilihan</label>
                 <input type="date" id="bookingDate">
+            </div>
+
+            <div class="form-group">
+                <label>Jumlah Ahli Keluarga</label>
+                <input type="number" id="custPax" placeholder="CONTOH: 5">
             </div>
 
             <div class="form-group">
@@ -167,16 +186,21 @@
                 </select>
             </div>
 
-            <button class="btn-submit" onclick="sendToWhatsApp()">Hantar Tempahan & Semak Masa</button>
+            <div class="form-group">
+                <label>Add-on Frame (Nyatakan Saiz)</label>
+                <textarea id="custAddon" rows="2" placeholder="CONTOH: FRAME 12R 1 UNIT"></textarea>
+            </div>
 
-            <p style="text-align:center; font-size:12px; margin-top:20px; opacity:0.8;">
-                Klik butang di atas untuk semak kekosongan masa terus dengan Admin kami.
-            </p>
+            <button class="btn-submit" onclick="sendToWhatsApp()">Hantar Tempahan & Semak Masa</button>
         </div>
     </section>
 
     <footer>
-        <div class="footer-ssm">RA0045721-V</div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/elzeeqstudio/?__pwa=1" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/elzeeqstudio" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="footer-ssm">SSM: RA0045721-V</div>
         <div class="footer-address">
             B3 BANGUNAN ARKED MARA SIMPANG EMPAT, 02700 PERLIS <br>
             ELZEEQ STUDIO © 2026 | SINCE 2016
@@ -186,18 +210,25 @@
     <script>
         function sendToWhatsApp() {
             const nama = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
             const tarikh = document.getElementById('bookingDate').value;
+            const pax = document.getElementById('custPax').value;
             const pakej = document.getElementById('custPakej').value;
+            const addon = document.getElementById('custAddon').value || "Tiada";
 
-            if(!nama || !tarikh) {
-                alert("Sila masukkan nama dan tarikh tempahan anda.");
+            if(!nama || !phone || !tarikh) {
+                alert("Sila lengkapkan butiran wajib (Nama, Tel & Tarikh).");
                 return;
             }
 
             let msg = `Salam Elzeeq Studio, saya ingin menempah slot raya:%0A%0A` +
                       `*NAMA*: ${nama.toUpperCase()}%0A` +
+                      `*NO TEL*: ${phone}%0A` +
                       `*TARIKH*: ${tarikh}%0A` +
-                      `*PAKEJ*: ${pakej}%0A%0A` +
+                      `*JUMLAH ORANG*: ${pax} Orang%0A` +
+                      `*PAKEJ*: ${pakej}%0A` +
+                      `*DEPOSIT*: RM50 (Confirmed)%0A` +
+                      `*ADD-ON*: ${addon}%0A%0A` +
                       `Saya ingin bertanya tentang kekosongan masa pada tarikh tersebut. Terima kasih.`;
 
             window.open(`https://wa.me/601160611731?text=${msg}`, "_blank");
