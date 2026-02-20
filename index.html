@@ -54,7 +54,16 @@
         .package-price { font-weight: 600; font-size: 22px; color: var(--soft-gold); margin-bottom: 10px; }
         .promo-tag { color: var(--promo-red); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
 
-        /* --- BENEFITS (POFO STYLE) --- */
+        /* --- FRAME SELECTION STYLE --- */
+        .frame-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: flex-end; margin-bottom: 80px; }
+        .frame-item { text-align: center; }
+        .frame-box { background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: inline-block; margin-bottom: 20px; transition: 0.3s; }
+        .frame-box:hover { transform: scale(1.03); }
+        .frame-box img { display: block; height: auto; object-fit: cover; }
+        .frame-details h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--studio-dark); }
+        .frame-details p { font-size: 14px; font-weight: 600; color: var(--soft-gold); }
+
+        /* --- BENEFITS --- */
         .benefits-section { background: var(--white); padding: 80px 40px; margin-bottom: 80px; border: 1px solid #EEE; }
         .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
         .benefit-item { font-size: 13px; line-height: 1.8; color: var(--text-muted); }
@@ -111,7 +120,7 @@
     </section>
 
     <section class="section" id="booking">
-        <h2 class="section-title">Pilihan Pakej & Tempahan</h2>
+        <h2 class="section-title">Pilihan Pakej Potret</h2>
         <div class="package-grid">
             <div class="package-card">
                 <img src="1.jpg" alt="Promo">
@@ -133,6 +142,39 @@
                 <div class="package-info">
                     <h3>Raya Pertama</h3>
                     <p class="package-price">RM130</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Add-on Eksklusif Frame</h2>
+        <div class="frame-grid">
+            <div class="frame-item">
+                <div class="frame-box" style="border: 12px solid #d4c4a8; padding: 5px;">
+                    <img src="1.jpg" width="180" alt="Frame 11R">
+                </div>
+                <div class="frame-details">
+                    <h4>SIZE 11R</h4>
+                    <p>RM70 (12 x 14 INCI)</p>
+                </div>
+            </div>
+
+            <div class="frame-item">
+                <div class="frame-box" style="border: 20px solid #232323; padding: 5px;">
+                    <img src="2.jpg" width="280" alt="Frame 24R">
+                </div>
+                <div class="frame-details">
+                    <h4>SIZE 24R</h4>
+                    <p>RM180 (24 x 31.5 INCI)</p>
+                </div>
+            </div>
+
+            <div class="frame-item">
+                <div class="frame-box" style="border: 15px solid #B89B72; padding: 5px;">
+                    <img src="4.jpg" width="220" alt="Frame 12RW">
+                </div>
+                <div class="frame-details">
+                    <h4>SIZE 12RW</h4>
+                    <p>RM100 (12 x 18 INCI)</p>
                 </div>
             </div>
         </div>
